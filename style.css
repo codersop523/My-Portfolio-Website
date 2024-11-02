@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* padding-top: 80px; To avoid content overlapping the navbar */
+    
+    color: white;
+    background: linear-gradient(135deg, #000428, #004e92); /* Default gradient for fallback */
+    background-size: 400% 400%; /* To create the animation effect */
+    animation: gradientAnimation 15s ease infinite; /* 15 seconds for a smooth loop */
+}
+
+/* Animation Keyframes for Background Gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    margin-top: 50px !important;
+    background-color: #001f3f;
+    border-radius: 15px;
+}
+
+.skills {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.project {
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p, 
+  .footer .nav-link {
+    color: white !important;
+  }
+
+  /* skills */
+  .skills-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.skill-icon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+.skill-icon:hover img {
+    filter: brightness(0.8);
+}
+
+.skill-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 0 0 10px 10px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-size: 14px;
+}
+
+.skill-icon:hover .skill-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Basic flip container setup */
+.flip-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 200px; /* Image height */
+    margin-top: 10px;
+    position: relative;
+    border-radius: 5%;
+  }
+  
+  .flip-image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5%;
+  }
+  
+  .flip-image:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-image img, .flip-image .description {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 5%;
+  }
+  
+  .flip-image img {
+    z-index: 2;
+  }
+  
+  .flip-image .description {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+  
