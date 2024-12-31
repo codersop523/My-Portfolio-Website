@@ -156,4 +156,10 @@ body {
     font-size: 0.9em;
     text-align: center;
   }
+
+  .nav-link.active {
+    color: #ffffff; /* Highlight color */
+    background-color: #001f3f; /* Background for active link */
+  }
+  
   
